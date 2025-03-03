@@ -6,7 +6,7 @@ import axios, { AxiosError } from 'axios';
 dotenv.config();
 
 const API_URL: string = 'https://api.spacetraders.io/v2';
-const TOKEN: string | undefined = process.env.SPACETRADERS_TOKEN;
+const TOKEN: string | undefined = process.env.SPACE_TRADERS_TOKEN;
 
 interface MissionResponse {
   data: {
@@ -16,11 +16,28 @@ interface MissionResponse {
       type: string;
       accepted: boolean;
       fulfilled: boolean;
-      // Autres propriétés de mission...
     }
   }
 }
 
+/**
+ * Accepts a mission by sending a POST request to the API.
+ *
+ * @returns {Promise<MissionResponse>} A promise that resolves to the mission response data.
+ *
+ * @throws {AxiosError} Throws an error if the request fails.
+ *
+ * @example
+ * ```typescript
+ * acceptMission()
+ *   .then(response => {
+ *     console.log('Mission accepted:', response);
+ *   })
+ *   .catch(error => {
+ *     console.error('Error accepting mission:', error);
+ *   });
+ * ```
+ */
 async function acceptMission(): Promise<MissionResponse> {
   const missionId: string = 'cm7swf3u2267xvt0j4u1071a6';
   

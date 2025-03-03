@@ -37,47 +37,24 @@ interface MissionResponse {
   data: Mission;
 }
 
-async function checkMissionStatus(): Promise<Mission> {
-  try {
-    const response = await axios.get<MissionResponse>(
-      `${API_URL}/missions/${MISSION_ID}`,
-      {
-        headers: {
-          'Authorization': `Bearer ${TOKEN}`
-        }
-      }
-    );
-    
-    const mission = response.data.data;
-    console.log('=== État de la mission ===');
-    console.log(`ID: ${mission.id}`);
-    console.log(`Faction: ${mission.factionSymbol}`);
-    console.log(`Type: ${mission.type}`);
-    console.log(`Acceptée: ${mission.accepted ? 'Oui' : 'Non'}`);
-    console.log(`Accomplie: ${mission.fulfilled ? 'Oui' : 'Non'}`);
-    console.log(`Date limite: ${mission.terms.deadline}`);
-    
-    // Afficher les détails de livraison
-    mission.terms.deliver.forEach(item => {
-      console.log('\nDétails de livraison:');
-      console.log(`Produit: ${item.tradeSymbol}`);
-      console.log(`Destination: ${item.destinationSymbol}`);
-      console.log(`Unités requises: ${item.unitsRequired}`);
-      console.log(`Unités livrées: ${item.unitsFulfilled}`);
-      console.log(`Progression: ${Math.round((item.unitsFulfilled / item.unitsRequired) * 100)}%`);
-    });
-    
-    // Paiements
-    console.log('\nPaiements:');
-    console.log(`À l'acceptation: ${mission.terms.payment.onAccepted} crédits`);
-    console.log(`À l'accomplissement: ${mission.terms.payment.onFulfilled} crédits`);
-    
-    return mission;
-  } catch (error) {
-    const axiosError = error as AxiosError;
-    console.error('Erreur lors de la vérification de l\'état de la mission:', 
-      axiosError.response ? axiosError.response.data : axiosError.message);
-    throw error;
+/**
+ * Checks the status of a mission by making an API call to retrieve mission details.
+ * 
+ * @returns {Promise<Mission>} A promise that resolves to the mission details.
+ * 
+ * @throws {AxiosError} Throws an error if the API call fails.
+ * 
+ * @example
+ * ```typescript
+ * checkMissionStatus()
+ *   .then(mission => {
+ *     console.log('Mission details:', mission);
+ *   })
+ *   .catch(error => {
+ *     console.error('Error checking mission status:', error);
+ *   });
+ * ```
+ */
   }
 }
 

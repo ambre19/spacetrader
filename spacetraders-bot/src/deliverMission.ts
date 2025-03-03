@@ -1,13 +1,10 @@
-// deliverMission.ts
-// Ce script livre l'ALUMINUM_ORE à la destination de la mission
-
 import dotenv from 'dotenv';
 import axios, { AxiosError } from 'axios';
 
 dotenv.config();
 
 const API_URL: string = 'https://api.spacetraders.io/v2';
-const TOKEN: string | undefined = process.env.SPACETRADERS_TOKEN;
+const TOKEN: string | undefined = process.env.SPACE_TRADERS_TOKEN;
 
 interface DeliveryResponse {
   data: {

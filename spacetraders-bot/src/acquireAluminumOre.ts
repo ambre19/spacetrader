@@ -52,6 +52,21 @@ interface PurchaseResponse {
 }
 
 // Option 1: Extraire de l'aluminium (si votre vaisseau a un équipement de minage)
+/**
+ * Mines aluminum ore from a specified asteroid waypoint using a given ship.
+ * 
+ * @param {string} shipSymbol - The symbol representing the ship to be used for mining.
+ * @param {string} asteroidWaypointSymbol - The symbol representing the asteroid waypoint where the mining will take place.
+ * @returns {Promise<number>} - A promise that resolves to the total amount of aluminum ore collected.
+ * 
+ * @throws {AxiosError} - Throws an error if the mining process fails.
+ * 
+ * @example
+ * ```typescript
+ * const aluminumOre = await mineAluminumOre('SHIP123', 'ASTEROID456');
+ * console.log(`Total aluminum ore collected: ${aluminumOre}`);
+ * ```
+ */
 async function mineAluminumOre(shipSymbol: string, asteroidWaypointSymbol: string): Promise<number> {
   try {
     // Naviguer vers l'astéroïde
@@ -230,17 +245,12 @@ async function dockShip(shipSymbol: string): Promise<void> {
   }
 }
 
-// Exécuter avec le vaisseau et la source appropriés
-// Remplacez ces valeurs par les résultats du script findAluminumSource.ts
+
 const shipSymbol: string = 'VOTRE_VAISSEAU_SYMBOL';
-const asteroidWaypointSymbol: string = 'ASTEROID_WAYPOINT_SYMBOL'; // Si vous minez
-const marketWaypointSymbol: string = 'MARKET_WAYPOINT_SYMBOL'; // Si vous achetez
+const asteroidWaypointSymbol: string = 'ASTEROID_WAYPOINT_SYMBOL'; // Si miné
+const marketWaypointSymbol: string = 'MARKET_WAYPOINT_SYMBOL'; // Si acheté
 
 // Choisissez l'une de ces méthodes selon votre stratégie
-// mineAluminumOre(shipSymbol, asteroidWaypointSymbol)
-//   .then(amount => console.log(`Total collecté: ${amount} unités`))
-//   .catch(err => console.error('Échec du minage:', err));
-
-// purchaseAluminumOre(shipSymbol, marketWaypointSymbol)
-//   .then(amount => console.log(`Total acheté: ${amount} unités`))
-//   .catch(err => console.error('Échec de l\'achat:', err));
+mineAluminumOre(shipSymbol, asteroidWaypointSymbol)
+   .then(amount => console.log(`Total collecté: ${amount} unités`))
+   .catch(err => console.error('Échec du minage:', err));

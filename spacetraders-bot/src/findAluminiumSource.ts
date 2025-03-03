@@ -1,13 +1,10 @@
-// findAluminumSource.ts
-// Ce script trouve les marchés ou astéroïdes où vous pouvez obtenir de l'ALUMINUM_ORE
-
 import dotenv from 'dotenv';
 import axios, { AxiosError } from 'axios';
 
 dotenv.config();
 
 const API_URL: string = 'https://api.spacetraders.io/v2';
-const TOKEN: string | undefined = process.env.SPACETRADERS_TOKEN;
+const TOKEN: string | undefined = process.env.SPACE_TRADERS_TOKEN;
 
 interface Ship {
   symbol: string;
@@ -15,9 +12,7 @@ interface Ship {
     systemSymbol: string;
     waypointSymbol: string;
     status: string;
-    // Autres propriétés de navigation...
   }
-  // Autres propriétés du vaisseau...
 }
 
 interface Waypoint {
@@ -82,6 +77,12 @@ async function scanWaypoints(shipSymbol: string, systemSymbol: string): Promise<
   }
 }
 
+/**
+ * Finds potential aluminum sources by scanning nearby waypoints using the first available ship.
+ * 
+ * @returns {Promise<{ship: Ship, potentialSources: Waypoint[]} | void>} An object containing the ship and potential sources of aluminum ore, or void if no ships are available.
+ * @throws Will log an error message if there is an issue during the process.
+ */
 async function findAluminumSources(): Promise<{ship: Ship, potentialSources: Waypoint[]} | void> {
   try {
     // 1. Obtenir tous les vaisseaux

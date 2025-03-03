@@ -63,6 +63,26 @@ async function sellCargo() {
 }
 
 // Boucle principale du minage
+/**
+ * Executes the mining loop which involves checking mining capability,
+ * navigating to the mining location, mining resources, and handling
+ * full cargo by selling it at the marketplace.
+ *
+ * The loop continues indefinitely until an error occurs.
+ *
+ * @async
+ * @function miningLoop
+ * @throws Will throw an error if any of the asynchronous operations fail.
+ */
+/**
+ * The `miningLoop` function is an asynchronous loop that handles the mining process.
+ * It first checks if the mining capability is available, then navigates to the mining location.
+ * Once at the mining location, it continuously mines resources until the cargo is full.
+ * When the cargo is full, it navigates to the marketplace to sell the cargo and then returns to the mining location.
+ * If any error occurs during the process, it logs the error message to the console.
+ *
+ * @throws Will throw an error if any of the asynchronous operations fail.
+ */
 async function miningLoop() {
   try {
     await checkMiningCapability();

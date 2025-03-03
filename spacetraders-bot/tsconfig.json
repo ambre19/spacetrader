@@ -1,3 +1,21 @@
+/*
+  This is the TypeScript configuration file for the Space Traders bot project.
+
+  compilerOptions:
+    - target: Specifies the ECMAScript target version. Here, it is set to ES2020.
+    - module: Specifies the module code generation method. Here, it is set to NodeNext.
+    - moduleResolution: Determines how modules are resolved. Here, it is set to NodeNext.
+    - esModuleInterop: Enables interoperability between CommonJS and ES Modules via synthetic default imports.
+    - strict: Enables all strict type-checking options.
+    - outDir: Specifies the output directory for the compiled JavaScript files. Here, it is set to "./dist".
+    - sourceMap: Generates corresponding '.map' files for debugging.
+
+  include:
+    - Specifies the files to be included in the compilation. Here, it includes all TypeScript files in the root directory.
+
+  exclude:
+    - Specifies the files to be excluded from the compilation. Here, it excludes the "node_modules" directory.
+*/
 {
   "compilerOptions": {
     "target": "ES2020",
