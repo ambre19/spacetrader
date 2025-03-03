@@ -6,17 +6,11 @@ out/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
 
 # TypeScript
 *.tsbuildinfo
 
-# Electron
-/.webpack/
-/.cache/
-/build/
-/release/
-/tmp/
-/test/
 
 # Configs sensibles
 src/config.ts
@@ -33,8 +27,3 @@ Thumbs.db
 .idea/
 *.sublime-workspace
 
-
-# Node.js
-node_modules/
-dist/
-.env
