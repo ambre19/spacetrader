@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+dist/
+out/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Electron
+/.webpack/
+/.cache/
+/build/
+/release/
+/tmp/
+/test/
+
+# Configs sensibles
+src/config.ts
+.env
+.env.local
+.env.*.local
+
+# OS spécifiques
+.DS_Store
+Thumbs.db
+
+# IDE / éditeurs
+.vscode/
+.idea/
+*.sublime-workspace
+
+
+# Node.js
+node_modules/
+dist/
+.env

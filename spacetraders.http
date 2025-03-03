@@ -19,3 +19,11 @@ Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
 ###
 GET https://api.spacetraders.io/v2/systems/{{SYSTEM}}
 Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+GET https://api.spacetraders.io/v2/my/contracts/cm7swf3u2267xvt0j4u1071a6/accept
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+GET https://api.spacetraders.io/v2/my/ships
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "target": "ES6",
+    "rootDir": "./",
+    "strict": true
+  },
+  "include": ["src", "electron"]
+}
