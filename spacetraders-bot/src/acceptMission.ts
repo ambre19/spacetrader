@@ -1,5 +1,3 @@
-// acceptMission.ts
-
 import dotenv from 'dotenv';
 import axios, { AxiosError } from 'axios';
 
@@ -27,6 +25,24 @@ interface MissionResponse {
  *
  * @throws {AxiosError} Throws an error if the request fails.
  *
+ * @example
+ * ```typescript
+ * acceptMission()
+ *   .then(response => {
+ *     console.log('Mission accepted:', response);
+ *   })
+ *   .catch(error => {
+ *     console.error('Error accepting mission:', error);
+ *   });
+ * ```
+ */
+/**
+ * Accepts a mission by sending a POST request to the specified API endpoint.
+ * 
+ * @returns {Promise<MissionResponse>} A promise that resolves to the mission response data.
+ * 
+ * @throws {AxiosError} Throws an error if the request fails.
+ * 
  * @example
  * ```typescript
  * acceptMission()
