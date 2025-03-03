@@ -1,0 +1,21 @@
+@SPACE_TRADERS_SYMBOL = VEX
+@SPACE_TRADERS_TOKEN = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiVkVYIiwidmVyc2lvbiI6InYyLjMuMCIsInJlc2V0X2RhdGUiOiIyMDI1LTAzLTAxIiwiaWF0IjoxNzQwOTk2NjA2LCJzdWIiOiJhZ2VudC10b2tlbiJ9.d9elLbVmljSIO9B6orSde9OdPDifLoWiXeuFg-SxPkb4yW9GtTv0WWDjqvzisa7iFRKvG75WXNIUgcHhjOAeDKVl40NSh211omToVRs1-ZSrLVhkKzit-_WHiCDE9sg_EeH0fyjetUJCEeq9yw2eRehv-RQ5323H9rwkvg5cxzK6mtyXZkaSJiiF3LQr_Y0D7rEvoyUDsuo3ecNDVmA4dOYx29DOhP3zlzXLCW-DyiiqOxDox9jMCeN90rBMhetP57UAwwf31mTBNp59T4xkJpx7K8nU9oRpQ0tRFPvZo68OyKql-sdOJaYZ5IDuB7kvL6exBhCa0pLiObm67vV7Rw
+
+###
+GET https://api.spacetraders.io/v2/my/agent
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+
+@SYSTEM = X1-Q87
+@WAYPOINT = X1-Q87-A1
+### headquarters are in one system
+GET https://api.spacetraders.io/v2/systems/{{SYSTEM}}/waypoints/{{WAYPOINT}}
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+### Get contracts
+GET https://api.spacetraders.io/v2/my/contracts
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+GET https://api.spacetraders.io/v2/systems/{{SYSTEM}}
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
