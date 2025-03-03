@@ -52,6 +52,28 @@ async function deliverAluminumOre(): Promise<DeliveryResponse> {
 }
 
 // Fonctions d'aide pour la navigation
+/**
+ * Navigates a ship to a specified waypoint.
+ *
+ * @param {string} shipSymbol - The symbol of the ship to navigate.
+ * @param {string} waypointSymbol - The symbol of the waypoint to navigate to.
+ * @returns {Promise<any>} A promise that resolves with the navigation response data.
+ *
+ * @throws {AxiosError} Throws an error if the navigation request fails.
+ *
+ * @example
+ * ```typescript
+ * const shipSymbol = 'SHIP123';
+ * const waypointSymbol = 'WAYPOINT456';
+ * navigateToWaypoint(shipSymbol, waypointSymbol)
+ *   .then(response => {
+ *     console.log('Navigation successful:', response);
+ *   })
+ *   .catch(error => {
+ *     console.error('Navigation failed:', error);
+ *   });
+ * ```
+ */
 async function navigateToWaypoint(shipSymbol: string, waypointSymbol: string): Promise<any> {
   try {
     const response = await axios.post(

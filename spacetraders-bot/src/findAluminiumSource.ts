@@ -83,6 +83,19 @@ async function scanWaypoints(shipSymbol: string, systemSymbol: string): Promise<
  * @returns {Promise<{ship: Ship, potentialSources: Waypoint[]} | void>} An object containing the ship and potential sources of aluminum ore, or void if no ships are available.
  * @throws Will log an error message if there is an issue during the process.
  */
+/**
+ * Finds potential aluminum sources for the first available ship.
+ *
+ * This function performs the following steps:
+ * 1. Retrieves all available ships.
+ * 2. Uses the first available ship to scan for nearby waypoints.
+ * 3. Logs and returns the potential sources of aluminum ore.
+ *
+ * @returns {Promise<{ship: Ship, potentialSources: Waypoint[]} | void>} 
+ * An object containing the ship and potential sources of aluminum ore, or void if no ships are available.
+ *
+ * @throws Will log an error message if there is an issue during the process.
+ */
 async function findAluminumSources(): Promise<{ship: Ship, potentialSources: Waypoint[]} | void> {
   try {
     // 1. Obtenir tous les vaisseaux
