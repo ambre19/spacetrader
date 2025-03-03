@@ -1,5 +1,5 @@
 @SPACE_TRADERS_SYMBOL = VEX
-@SPACE_TRADERS_TOKEN = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiVkVYIiwidmVyc2lvbiI6InYyLjMuMCIsInJlc2V0X2RhdGUiOiIyMDI1LTAzLTAxIiwiaWF0IjoxNzQwOTk2NjA2LCJzdWIiOiJhZ2VudC10b2tlbiJ9.d9elLbVmljSIO9B6orSde9OdPDifLoWiXeuFg-SxPkb4yW9GtTv0WWDjqvzisa7iFRKvG75WXNIUgcHhjOAeDKVl40NSh211omToVRs1-ZSrLVhkKzit-_WHiCDE9sg_EeH0fyjetUJCEeq9yw2eRehv-RQ5323H9rwkvg5cxzK6mtyXZkaSJiiF3LQr_Y0D7rEvoyUDsuo3ecNDVmA4dOYx29DOhP3zlzXLCW-DyiiqOxDox9jMCeN90rBMhetP57UAwwf31mTBNp59T4xkJpx7K8nU9oRpQ0tRFPvZo68OyKql-sdOJaYZ5IDuB7kvL6exBhCa0pLiObm67vV7Rw
+@SPACE_TRADERS_TOKEN = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiVkVYIiwidmVyc2lvbiI6InYyLjMuMCIsInJlc2V0X2RhdGUiOiIyMDI1LTAzLTAxIiwiaWF0IjoxNzQxMDEzODc1LCJzdWIiOiJhZ2VudC10b2tlbiJ9.W-2cMgPWOrh33whlsvn1f11kqazbuRSlfHu93fso35VfQ8ZGYGu3aREhVCK_PEKI1XDwVHsWGCv6VOVK--QxppW5cjBOxJM5nPqF1H1eBWNaXVuapD3ydJ2apIZFSdKiE56wV76ENPUkGYH7eAAk105f1iha4u9swDyIalml0SMb2MTTuksOguleFYm7qZegw573DsvEqqOQGpwsMkd9zzB53Ot-YF7BochP__wLCtwZMFZBYCME1mJRSefQNFOb5z8f_mE4BvDB-jQnFqiR-rmDcl7s6Aqb_yG9RbxJWz_yA-OfKgQs-QRAW4izCAOROyuuremvFKyxF4O8chcy0w
 
 ###
 GET https://api.spacetraders.io/v2/my/agent
@@ -21,9 +21,23 @@ GET https://api.spacetraders.io/v2/systems/{{SYSTEM}}
 Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
 
 ###
-GET https://api.spacetraders.io/v2/my/contracts/cm7swf3u2267xvt0j4u1071a6/accept
+POST https://api.spacetraders.io/v2/my/contracts/cm7swf3u2267xvt0j4u1071a6/accept
 Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
 
 ###
 GET https://api.spacetraders.io/v2/my/ships
 Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+GET https://api.spacetraders.io/v2/systems/X1-Q87/waypoints/X1-Q87-A1/market
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+GET https://api.spacetraders.io/v2/systems/X1-Q87/waypoints
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+
+###
+POST https://api.spacetraders.io/v2/my/ships/{shipSymbol}/extract
+Authorization: Bearer {{SPACE_TRADERS_TOKEN}}
+Content-Type: application/json
+
